@@ -10,7 +10,7 @@ public abstract class Item {
     protected int agility;
     protected int spirit;
 
-    public Item(String type) {
+    protected Item(String type) {
         this.type = type;
         this.equipped = false;
     }
