@@ -31,7 +31,7 @@ public class Tank extends Player {
     return shield;
   }
 
-  public Armor equipShield(Armor shield) {
+  public void equipShield(Armor shield) {
       this.shield = shield;
   }
 
