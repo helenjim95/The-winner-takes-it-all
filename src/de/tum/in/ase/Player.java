@@ -29,12 +29,12 @@ public abstract class Player implements Interactions {
     this.specification = specification;
     this.amountOfArmor = amountOfArmor;
     this.health = 200;
+    this.armor = armor;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
     if (Objects.equals(weaponType, weapon.getType())) {
-      equipItems();
-      this.armor = armor;
       this.weapon = weapon;
     }
+    equipItems();
   }
 
   public String getName() {
