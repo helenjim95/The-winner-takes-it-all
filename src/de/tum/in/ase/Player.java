@@ -34,6 +34,7 @@ public abstract class Player implements Interactions {
     if (Objects.equals(weaponType, weapon.getType())) {
       this.weapon = weapon;
     }
+    equipItems();
   }
 
   public String getName() {

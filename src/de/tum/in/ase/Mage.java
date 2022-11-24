@@ -20,7 +20,11 @@ public class Mage extends Player {
       this.spirit = 6;
     }
 
-    @Override
+  public List<Ability> getAbilities() {
+    return abilities;
+  }
+
+  @Override
     public void attack(Player target) {
       if (!this.getWeapon().isEquipped()) {
         System.out.println("You don't have a weapon to attack!");
@@ -57,7 +61,4 @@ public class Mage extends Player {
       }
     }
 
-    // TODO: Implement part 5.
-
-  // TODO: Implement part 6.
 }

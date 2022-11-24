@@ -14,10 +14,15 @@ public class Healer extends Player {
       if (Objects.equals(weaponType, weapon.getType())) {
         this.setWeapon(weapon);
       }
+      equipItems();
       this.strength = 3;
       this.intelligence = 5;
       this.agility = 3;
       this.spirit = 10;
+    }
+
+    public List<Ability> getAbilities() {
+      return abilities;
     }
 
     @Override

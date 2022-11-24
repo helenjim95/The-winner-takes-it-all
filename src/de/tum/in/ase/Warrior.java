@@ -14,10 +14,15 @@ public class Warrior extends Player {
     if (Objects.equals(weaponType, weapon.getType())) {
       this.setWeapon(weapon);
     }
+    equipItems();
     this.strength = 20;
     this.intelligence = 2;
     this.agility = 8;
     this.spirit = 2;
+  }
+
+  public List<Ability> getAbilities() {
+    return abilities;
   }
 
   @Override
