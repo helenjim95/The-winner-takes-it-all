@@ -31,6 +31,10 @@ public class Tank extends Player {
     return shield;
   }
 
+  public Armor equipShield(Armor shield) {
+      this.shield = shield;
+  }
+
   @Override
     public void attack(Player target) {
       if (!this.getWeapon().isEquipped()) {
