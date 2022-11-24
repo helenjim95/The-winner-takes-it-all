@@ -13,9 +13,9 @@ public class Tank extends Player {
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
       if (Objects.equals(weaponType, weapon.getType())) {
-        this.setWeapon(weapon);
+        equipItems();
+        setWeapon(weapon);
       }
-      equipItems();
       this.shield = shield;
       this.strength = 14;
       this.intelligence = 4;

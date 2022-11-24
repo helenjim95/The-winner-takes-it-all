@@ -12,9 +12,9 @@ public class Healer extends Player {
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
       if (Objects.equals(weaponType, weapon.getType())) {
-        this.setWeapon(weapon);
+        equipItems();
+        setWeapon(weapon);
       }
-      equipItems();
       this.strength = 3;
       this.intelligence = 5;
       this.agility = 3;
