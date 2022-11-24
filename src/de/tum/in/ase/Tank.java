@@ -27,7 +27,11 @@ public class Tank extends Player {
       return abilities;
     }
 
-    @Override
+  public Armor getShield() {
+    return shield;
+  }
+
+  @Override
     public void attack(Player target) {
       if (!this.getWeapon().isEquipped()) {
         System.out.println("You don't have a weapon to attack!");
