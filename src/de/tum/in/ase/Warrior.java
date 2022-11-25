@@ -12,7 +12,7 @@ public class Warrior extends Player {
     this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
     if (Objects.equals(weaponType, weapon.getType())) {
-      setWeapon(weapon);
+      this.weapon = weapon;
     }
     equipItems();
     this.strength = 20;
@@ -34,7 +34,7 @@ public class Warrior extends Player {
       double k2 = 0.8;
       double damage = strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor();
       if (damage < 0) {
-        System.out.printf("Target %s didn't receive any damage!", target.getName());
+        System.out.printf("Target %s didn't receive any damage!%n", target.getName());
       } else {
         target.setHealth(target.getHealth() - damage);
         if (target.isDead()) {
