@@ -14,6 +14,7 @@ public class Armor extends Item {
         this.spirit = spirit;
     }
 
+
     public int getAmountOfArmor() {
         return amountOfArmor;
     }

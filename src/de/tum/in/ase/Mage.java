@@ -45,6 +45,7 @@ public class Mage extends Player {
       }
     }
 
+//    TODO: Damage dealt to the enemy target after using an ability is incorrect.
     @Override
     public void useAbility(Player target) {
       int length = abilities.size() - 1;

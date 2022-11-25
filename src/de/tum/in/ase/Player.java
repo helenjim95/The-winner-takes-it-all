@@ -177,6 +177,7 @@ public abstract class Player implements Interactions {
         item.equipped = true;
       } else if (item.getClass() == Armor.class) {
         this.armor.add((Armor) item);
+        setAmountOfArmor(this.getAmountOfArmor() + 1);
         item.equipped = true;
       } else {
         System.out.println("This item is neither weapon or armor");
