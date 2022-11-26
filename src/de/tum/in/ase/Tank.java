@@ -31,6 +31,7 @@ public class Tank extends Player {
 
     private void equipShield() {
       shield.setEquipped(true);
+      armor.add(shield);
     }
 
     @Override
@@ -60,7 +61,7 @@ public class Tank extends Player {
       if (length == 0) {
         System.out.printf("%s has no skills to use!%n", this.name);
       } else {
-        super.setAmountOfArmor(super.getAmountOfArmor() + 1);
+        equipShield();
 //      force his target to attack him
         System.out.println("Hey you! I am here, attack me!");
       }
