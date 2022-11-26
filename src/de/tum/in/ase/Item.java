@@ -70,6 +70,4 @@ public abstract class Item {
     public void setSpirit(int spirit) {
         this.spirit = spirit;
     }
-
-
 }

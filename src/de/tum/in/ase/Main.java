@@ -10,22 +10,33 @@ public class Main {
         Player tank = generatePlayer("Tank");
         Player warrior = generatePlayer("Warrior");
         mage.equipItems();
+        tank.useAbility(mage);
 //        healer.attack(mage);
 //        mage.useAbility(healer);
     }
 
     private static List<Armor> generateArmorList(String specification, int amountOfArmor) {
         List<Armor> armorList = new ArrayList<>();
-        Armor helmet = new Armor("Helmet", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
-        Armor chest = new Armor("Chest", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
-        Armor hands = new Armor("Hands", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
-        Armor legs = new Armor("Legs", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
-        Armor boots = new Armor("Boots", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
-        armorList.add(helmet);
-        armorList.add(chest);
-        armorList.add(hands);
-        armorList.add(legs);
-        armorList.add(boots);
+        Armor helmet1 = new Armor("Helmet", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor chest1 = new Armor("Chest", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor hands1 = new Armor("Hands", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor legs1 = new Armor("Legs", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor boots1 = new Armor("Boots", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor helmet2 = new Armor("Helmet", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor chest2 = new Armor("Chest", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor hands2 = new Armor("Hands", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor legs2 = new Armor("Legs", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        Armor boots2 = new Armor("Boots", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+        armorList.add(helmet1);
+        armorList.add(chest1);
+        armorList.add(hands1);
+        armorList.add(legs1);
+        armorList.add(boots1);
+        armorList.add(helmet2);
+        armorList.add(chest2);
+        armorList.add(hands2);
+        armorList.add(legs2);
+        armorList.add(boots2);
         return armorList;
     }
 
@@ -39,6 +50,9 @@ public class Main {
         Ability damage = new Ability("damage",specification, (int) (Math.random() * 10));
         Ability heal = new Ability("heal",specification, (int) (Math.random() * 10));
         Ability armor = new Ability("armor",specification, (int) (Math.random() * 10));
+        abilities.add(damage);
+        abilities.add(heal);
+        abilities.add(armor);
         return abilities;
     }
 
