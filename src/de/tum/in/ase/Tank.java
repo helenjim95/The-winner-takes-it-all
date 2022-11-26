@@ -35,12 +35,12 @@ public class Tank extends Player {
 
     @Override
     public void attack(Player target) {
-      if (!this.getWeapon().isEquipped()) {
+      if (weapon == null || !weapon.isEquipped()) {
         System.out.println("You don't have a weapon to attack!");
       } else {
         double k1 = 0.7;
         double k2 = 0.6;
-        int damage = (int) (strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor());
+        int damage = (int) (strength * k1 + weapon.getDamage() + agility * k2 - target.getAmountOfArmor());
         if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
