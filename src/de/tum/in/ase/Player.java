@@ -26,6 +26,7 @@ public abstract class Player implements Interactions {
 //    TODO: How to initialize specification?
     protected Player(String name, String specification, int amountOfArmor, List<Armor> armor, Weapon weapon, String weaponType) {
       this.name = name;
+//      TODO: of player character(Mage, Tank, Healer, or Warrior)
       this.specification = specification;
       this.amountOfArmor = amountOfArmor;
       this.health = 200;
