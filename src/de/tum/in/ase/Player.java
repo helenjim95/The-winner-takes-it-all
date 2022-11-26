@@ -196,7 +196,7 @@ public abstract class Player implements Interactions {
   //   After equipping, any item player's attributes should be changed accordingly.
   //   Same applies to equipping the weapon.
     protected void equipItems() {
-  //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
+      //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
 //      boolean helmetEquipped = false;
 //      boolean chestEquipped = false;
 //      boolean handsEquipped = false;
@@ -204,47 +204,50 @@ public abstract class Player implements Interactions {
 //      boolean bootsEquipped = false;
 //      boolean weaponEquipped = false;
 //      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
-      for (Armor arm : armor) {
-        switch (arm.getType()) {
-          case "Helmet":
-            if (this.helmet == null || !this.helmet.equipped) {
+      if (!armor.isEmpty()) {
+        for (int i = 0; i < armor.size(); i++) {
+          Armor arm = armor.get(i);
+          switch (arm.getType()) {
+            case "Helmet":
+              if (this.helmet == null || !this.helmet.equipped) {
 //               After equipping, any item player's attributes should be changed accordingly.
-              setHelmet(arm);
-              equipItemsHelperMethod(arm);
+                setHelmet(arm);
+                equipItemsHelperMethod(arm);
 //              helmetEquipped = true;
-            }
-            break;
-          case "Chest":
-            if (this.chest == null || !this.chest.equipped) {
-              setChest(arm);
-              equipItemsHelperMethod(arm);
+              }
+              break;
+            case "Chest":
+              if (this.chest == null || !this.chest.equipped) {
+                setChest(arm);
+                equipItemsHelperMethod(arm);
 //              chestEquipped = true;
-            }
-            break;
-          case "Hands":
-            if (this.hands == null || !this.hands.equipped) {
-              setHands(arm);
-              equipItemsHelperMethod(arm);
+              }
+              break;
+            case "Hands":
+              if (this.hands == null || !this.hands.equipped) {
+                setHands(arm);
+                equipItemsHelperMethod(arm);
 //              handsEquipped = true;
-            }
-            break;
-          case "Legs":
-            if (this.legs == null || !this.legs.equipped) {
-              setLegs(arm);
-              equipItemsHelperMethod(arm);
+              }
+              break;
+            case "Legs":
+              if (this.legs == null || !this.legs.equipped) {
+                setLegs(arm);
+                equipItemsHelperMethod(arm);
 //              legsEquipped = true;
-            }
-            break;
-          case "Boots":
-            if (this.boots == null || !this.boots.equipped) {
-              setBoots(arm);
-              equipItemsHelperMethod(arm);
+              }
+              break;
+            case "Boots":
+              if (this.boots == null || !this.boots.equipped) {
+                setBoots(arm);
+                equipItemsHelperMethod(arm);
 //              bootsEquipped = true;
-            }
-            break;
-          default:
-            System.out.printf("There is no armor with the type of %s%n", arm.getType());
-            break;
+              }
+              break;
+            default:
+              System.out.printf("There is no armor with the type of %s%n", arm.getType());
+              break;
+          }
         }
       }
       if (this.weapon == null || !this.weapon.equipped) {
