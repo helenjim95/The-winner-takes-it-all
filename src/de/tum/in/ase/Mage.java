@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Mage extends Player {
-  // TODO: Implement part 4.
+
     private List<Ability> abilities;
 
     public Mage(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {

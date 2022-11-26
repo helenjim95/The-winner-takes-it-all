@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Healer extends Player {
-  // TODO: Implement part 4.
   private List<Ability> abilities;
 
     public Healer(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {

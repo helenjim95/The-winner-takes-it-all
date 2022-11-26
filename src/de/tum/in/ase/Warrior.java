@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Warrior extends Player {
-  // TODO: Implement part 4.
   private List<Ability> abilities;
 
   public Warrior(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {

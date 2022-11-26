@@ -1,7 +1,7 @@
 package de.tum.in.ase;
 
 public abstract class Item {
-  // TODO: Implement part 2.
+
     protected String specification;
     protected String type;
     protected boolean equipped;

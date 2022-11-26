@@ -11,7 +11,6 @@ public class Ability {
     public Ability(String name, String specification, int amount) {
         this.name = name;
         this.specification = specification;
-//        TODO: how to initialize this? & amount?
         switch (specification) {
             case "Mage", "Warrior":
                 this.damage = amount;

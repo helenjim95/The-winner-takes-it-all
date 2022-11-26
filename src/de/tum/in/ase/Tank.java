@@ -1,10 +1,8 @@
 package de.tum.in.ase;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Tank extends Player {
-  // TODO: Implement part 4.
     private List<Ability> abilities;
     private Armor shield;
 
@@ -32,6 +30,7 @@ public class Tank extends Player {
     private void equipShield() {
       shield.setEquipped(true);
       armor.add(shield);
+      setAmountOfArmor(getAmountOfArmor() + shield.getAmountOfArmor());
     }
 
     @Override
@@ -58,7 +57,7 @@ public class Tank extends Player {
     public void useAbility(Player target) {
 //      when a tank uses his ability, the armor is increased and afterwards he deals with the enemy attack.
       int length = abilities.size() - 1;
-      if (length == 0) {
+      if (length <= 0) {
         System.out.printf("%s has no skills to use!%n", this.name);
       } else {
         equipShield();

@@ -1,7 +1,6 @@
 package de.tum.in.ase;
 
 import java.util.List;
-import java.util.Objects;
 
 public abstract class Player implements Interactions {
   // Done: Add missing attributes.
@@ -174,7 +173,6 @@ public abstract class Player implements Interactions {
     this.weapon = weapon;
   }
 
-  //    TODO: what does this method do?
     public void equipItemsHelperMethod(Item item) {
       if (item.getClass() == Weapon.class) {
         this.weapon = (Weapon) item;
@@ -188,7 +186,6 @@ public abstract class Player implements Interactions {
       }
     }
 
-    // TODO: Implement part 3.
     protected boolean isDead() {
         return health == 0;
       }
@@ -200,49 +197,49 @@ public abstract class Player implements Interactions {
   //   Same applies to equipping the weapon.
     protected void equipItems() {
   //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
-      boolean helmetEquipped = false;
-      boolean chestEquipped = false;
-      boolean handsEquipped = false;
-      boolean legsEquipped = false;
-      boolean bootsEquipped = false;
-      boolean weaponEquipped = false;
+//      boolean helmetEquipped = false;
+//      boolean chestEquipped = false;
+//      boolean handsEquipped = false;
+//      boolean legsEquipped = false;
+//      boolean bootsEquipped = false;
+//      boolean weaponEquipped = false;
 //      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
       for (Armor arm : armor) {
         switch (arm.getType()) {
           case "Helmet":
-            if (!helmetEquipped) {
+            if (this.helmet == null || !this.helmet.equipped) {
 //               After equipping, any item player's attributes should be changed accordingly.
               setHelmet(arm);
               equipItemsHelperMethod(arm);
-              helmetEquipped = true;
+//              helmetEquipped = true;
             }
             break;
           case "Chest":
-            if (!chestEquipped) {
+            if (this.chest == null || !this.chest.equipped) {
               setChest(arm);
               equipItemsHelperMethod(arm);
-              chestEquipped = true;
+//              chestEquipped = true;
             }
             break;
           case "Hands":
-            if (!handsEquipped) {
+            if (this.hands == null || !this.hands.equipped) {
               setHands(arm);
               equipItemsHelperMethod(arm);
-              handsEquipped = true;
+//              handsEquipped = true;
             }
             break;
           case "Legs":
-            if (!legsEquipped) {
+            if (this.legs == null || !this.legs.equipped) {
               setLegs(arm);
               equipItemsHelperMethod(arm);
-              legsEquipped = true;
+//              legsEquipped = true;
             }
             break;
           case "Boots":
-            if (!bootsEquipped) {
+            if (this.boots == null || !this.boots.equipped) {
               setBoots(arm);
               equipItemsHelperMethod(arm);
-              bootsEquipped = true;
+//              bootsEquipped = true;
             }
             break;
           default:
@@ -250,10 +247,10 @@ public abstract class Player implements Interactions {
             break;
         }
       }
-      if (!weaponEquipped) {
+      if (this.weapon == null || !this.weapon.equipped) {
         setWeapon(weapon);
-        weapon.setEquipped(true);
-        weaponEquipped = true;
+        equipItemsHelperMethod(weapon);
+//        weaponEquipped = true;
       }
     }
 }
