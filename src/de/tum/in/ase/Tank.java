@@ -31,9 +31,8 @@ public class Tank extends Player {
     }
 
 //    TODO: what does this method do?
-    public void equipShield() {
+    private void equipShield() {
       shield.setEquipped(true);
-
     }
 
     @Override
