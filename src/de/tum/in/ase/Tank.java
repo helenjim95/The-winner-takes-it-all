@@ -65,6 +65,7 @@ public class Tank extends Player {
             setAmountOfArmor(getAmountOfArmor() + armorIncrease);
 //      force his target to attack him
             System.out.println("Hey you! I am here, attack me!");
+            target.attack(this);
         }
     }
 }
