@@ -23,19 +23,19 @@ public abstract class Player implements Interactions {
     protected List<Armor> armor;
     protected Weapon weapon;
 
-//    TODO: How to initialize specification?
     protected Player(String name, String specification, int amountOfArmor, List<Armor> armor, Weapon weapon, String weaponType) {
       this.name = name;
-//      TODO: of player character(Mage, Tank, Healer, or Warrior)
+//    player character(Mage, Tank, Healer, or Warrior)
       this.specification = specification;
       this.amountOfArmor = amountOfArmor;
+      this.weaponType = weaponType;
       this.health = 200;
+      this.level = 1;
       this.armor = armor;
   //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      if (Objects.equals(weaponType, weapon.getType())) {
+      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
         this.weapon = weapon;
       }
-      equipItems();
     }
 
     public String getName() {
@@ -170,6 +170,9 @@ public abstract class Player implements Interactions {
       return weapon;
     }
 
+  public void setWeapon(Weapon weapon) {
+    this.weapon = weapon;
+  }
 
   //    TODO: what does this method do?
     public void equipItemsHelperMethod(Item item) {
@@ -203,37 +206,39 @@ public abstract class Player implements Interactions {
       boolean legsEquipped = false;
       boolean bootsEquipped = false;
       boolean weaponEquipped = false;
+//      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
       for (Armor arm : armor) {
         switch (arm.getType()) {
-          case "helmet":
+          case "Helmet":
             if (!helmetEquipped) {
+//               After equipping, any item player's attributes should be changed accordingly.
               setHelmet(arm);
               arm.setEquipped(true);
               helmetEquipped = true;
             }
             break;
-          case "chest":
+          case "Chest":
             if (!chestEquipped) {
               setChest(arm);
               arm.setEquipped(true);
               chestEquipped = true;
             }
             break;
-          case "hands":
+          case "Hands":
             if (!handsEquipped) {
               setHands(arm);
               arm.setEquipped(true);
               handsEquipped = true;
             }
             break;
-          case "legs":
+          case "Legs":
             if (!legsEquipped) {
               setLegs(arm);
               arm.setEquipped(true);
               legsEquipped = true;
             }
             break;
-          case "boots":
+          case "Boots":
             if (!bootsEquipped) {
               setBoots(arm);
               arm.setEquipped(true);
@@ -246,6 +251,7 @@ public abstract class Player implements Interactions {
         }
       }
       if (!weaponEquipped) {
+        setWeapon(weapon);
         weapon.setEquipped(true);
         weaponEquipped = true;
       }

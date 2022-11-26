@@ -11,10 +11,9 @@ public class Mage extends Player {
       super(name, "Mage", armor.size(), armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      if (Objects.equals(weaponType, weapon.getType())) {
+      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
         this.weapon = weapon;
       }
-      equipItems();
       this.strength = 2;
       this.intelligence = 10;
       this.agility = 4;
