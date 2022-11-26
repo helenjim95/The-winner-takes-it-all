@@ -53,7 +53,7 @@ public class Healer extends Player {
       } else {
         int randomIndex = (int) (Math.random() * length);
         Ability ability = abilities.get(randomIndex);
-        double healthIncrease = spirit + ability.getHeal() + intelligence * 0.5;
+        int healthIncrease = (int) (spirit + ability.getHeal() + intelligence * 0.5);
         if (target.isDead()) {
           System.out.printf("Can not heal %s, %s is dead!%n", target.getName(), target.getName());
         } else {

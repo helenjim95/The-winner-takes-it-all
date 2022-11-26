@@ -54,7 +54,7 @@ public class Mage extends Player {
       } else {
         int randomIndex = (int) (Math.random() * length);
 //      use abilities to damage targets
-        double damage = intelligence + abilities.get(randomIndex).getDamage() + spirit * 0.5 - target.getAmountOfArmor();
+        int damage = (int) (intelligence + abilities.get(randomIndex).getDamage() + spirit * 0.5 - target.getAmountOfArmor());
         if (damage < 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {

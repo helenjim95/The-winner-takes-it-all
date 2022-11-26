@@ -32,7 +32,7 @@ public class Warrior extends Player {
     } else {
       double k1 = 1;
       double k2 = 0.8;
-      double damage = strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor();
+      int damage = (int) (strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor());
       if (damage < 0) {
         System.out.printf("Target %s didn't receive any damage!%n", target.getName());
       } else {
