@@ -56,12 +56,15 @@ public class Tank extends Player {
     @Override
     public void useAbility(Player target) {
 //      when a tank uses his ability, the armor is increased and afterwards he deals with the enemy attack.
-        if (abilities.isEmpty()) {
+        int length = abilities.size() - 1;
+        if (length == 0) {
         System.out.printf("%s has no skills to use!%n", this.name);
-      } else {
-        equipShield();
+        } else {
+            int randomIndex = (int) (Math.random() * length);
+            int armorIncrease = abilities.get(randomIndex).getArmor();
+            setAmountOfArmor(getAmountOfArmor() + armorIncrease);
 //      force his target to attack him
-        System.out.println("Hey you! I am here, attack me!");
-      }
+            System.out.println("Hey you! I am here, attack me!");
+        }
     }
 }
