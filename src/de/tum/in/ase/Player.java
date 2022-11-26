@@ -181,7 +181,7 @@ public abstract class Player implements Interactions {
         item.equipped = true;
       } else if (item.getClass() == Armor.class) {
         this.armor.add((Armor) item);
-        setAmountOfArmor(this.getAmountOfArmor() + 1);
+        setAmountOfArmor(this.getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
         item.equipped = true;
       } else {
         System.out.println("This item is neither weapon or armor");
@@ -213,35 +213,35 @@ public abstract class Player implements Interactions {
             if (!helmetEquipped) {
 //               After equipping, any item player's attributes should be changed accordingly.
               setHelmet(arm);
-              arm.setEquipped(true);
+              equipItemsHelperMethod(arm);
               helmetEquipped = true;
             }
             break;
           case "Chest":
             if (!chestEquipped) {
               setChest(arm);
-              arm.setEquipped(true);
+              equipItemsHelperMethod(arm);
               chestEquipped = true;
             }
             break;
           case "Hands":
             if (!handsEquipped) {
               setHands(arm);
-              arm.setEquipped(true);
+              equipItemsHelperMethod(arm);
               handsEquipped = true;
             }
             break;
           case "Legs":
             if (!legsEquipped) {
               setLegs(arm);
-              arm.setEquipped(true);
+              equipItemsHelperMethod(arm);
               legsEquipped = true;
             }
             break;
           case "Boots":
             if (!bootsEquipped) {
               setBoots(arm);
-              arm.setEquipped(true);
+              equipItemsHelperMethod(arm);
               bootsEquipped = true;
             }
             break;

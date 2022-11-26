@@ -31,8 +31,8 @@ public class Mage extends Player {
       } else {
         double k1 = 0.4;
         double k2 = 0.4;
-        double damage = strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor();
-        if (damage < 0) {
+        int damage = (int) (strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor());
+        if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
           target.setHealth(target.getHealth() - damage);
@@ -54,7 +54,7 @@ public class Mage extends Player {
         int randomIndex = (int) (Math.random() * length);
 //      use abilities to damage targets
         int damage = (int) (intelligence + abilities.get(randomIndex).getDamage() + spirit * 0.5 - target.getAmountOfArmor());
-        if (damage < 0) {
+        if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
           target.setHealth(target.getHealth() - damage);

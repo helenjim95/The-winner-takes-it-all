@@ -31,8 +31,8 @@ public class Healer extends Player {
       } else {
         double k1 = 0.2;
         double k2 = 0.1;
-        double damage = strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor();
-        if (damage < 0) {
+        int damage = (int) (strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor());
+        if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
           target.setHealth(target.getHealth() - damage);

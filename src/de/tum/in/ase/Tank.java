@@ -41,7 +41,7 @@ public class Tank extends Player {
         double k1 = 0.7;
         double k2 = 0.6;
         int damage = (int) (strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor());
-        if (damage < 0) {
+        if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
           target.setHealth(target.getHealth() - damage);

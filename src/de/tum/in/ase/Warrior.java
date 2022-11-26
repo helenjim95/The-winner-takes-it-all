@@ -32,7 +32,7 @@ public class Warrior extends Player {
       double k1 = 1;
       double k2 = 0.8;
       int damage = (int) (strength * k1 + this.getWeapon().getDamage() + agility * k2 - target.getAmountOfArmor());
-      if (damage < 0) {
+      if (damage <= 0) {
         System.out.printf("Target %s didn't receive any damage!%n", target.getName());
       } else {
         target.setHealth(target.getHealth() - damage);
@@ -47,14 +47,17 @@ public class Warrior extends Player {
   @Override
   public void useAbility(Player target) {
     int length = abilities.size() - 1;
-    int randomIndex = (int) (Math.random() * length);
-//      use abilities to damage targets
-    double damage = strength * 2 + abilities.get(randomIndex).getDamage() - target.getAmountOfArmor();
-    if (damage < 0) {
+    if (length == 0) {
       System.out.printf("%s has no skills to use!%n", this.name);
     } else {
-      target.setHealth(target.getHealth() - damage);
+      int randomIndex = (int) (Math.random() * length);
+//      use abilities to damage targets
+      int damage = strength * 2 + abilities.get(randomIndex).getDamage() - target.getAmountOfArmor();
+      if (damage <= 0) {
+        System.out.printf("Target %s didn't receive any damage!%n", target.getName());
+      } else {
+        target.setHealth(target.getHealth() - damage);
+      }
     }
   }
-
 }
