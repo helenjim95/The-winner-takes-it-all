@@ -193,7 +193,7 @@ public abstract class Player implements Interactions {
 //        System.out.println(item.getClass() == Armor.class);
 
 //        System.out.println("old amount of armor: " + getAmountOfArmor());
-        this.setAmountOfArmor(this.getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
+        this.amountOfArmor = this.amountOfArmor + ((Armor) item).getAmountOfArmor();
 
 //        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
 //        System.out.println("new amount of armor: " + getAmountOfArmor());
@@ -219,51 +219,53 @@ public abstract class Player implements Interactions {
       if (!armor.isEmpty()) {
         for (int i = 0; i < armor.size(); i++) {
           Armor arm = armor.get(i);
-          switch (arm.getType()) {
-            case "helmet":
-              if (this.helmet == null) {
+          if (arm.getSpecification().equals(this.specification)) {
+            switch (arm.getType()) {
+              case "helmet":
+                if (this.helmet == null) {
 //               After equipping, any item player's attributes should be changed accordingly.
-                setHelmet(arm);
-                equipItemsHelperMethod(arm);
-                this.getHelmet().setEquipped(true);
-                System.out.println(name + "is equipped with " + getHelmet().getType());
-              }
-              break;
-            case "chest":
-              if (this.chest == null) {
-                setChest(arm);
-                equipItemsHelperMethod(arm);
-                this.getChest().setEquipped(true);
-                System.out.println(name + "is equipped with " + getChest().getType());
-              }
-              break;
-            case "hands":
-              if (this.hands == null) {
-                setHands(arm);
-                equipItemsHelperMethod(arm);
-                this.getHands().setEquipped(true);
-                System.out.println(name + "is equipped with " + getHands().getType());
-              }
-              break;
-            case "legs":
-              if (this.legs == null) {
-                setLegs(arm);
-                equipItemsHelperMethod(arm);
-                this.getLegs().setEquipped(true);
-                System.out.println(name + "is equipped with " + getLegs().getType());
-              }
-              break;
-            case "boots":
-              if (this.boots == null) {
-                setBoots(arm);
-                equipItemsHelperMethod(arm);
-                this.getBoots().setEquipped(true);
-                System.out.println(name + "is equipped with " + getBoots().getType());
-              }
-              break;
-            default:
-              System.out.printf("There is no armor with the type of %s%n", arm.getType());
-              break;
+                  setHelmet(arm);
+                  equipItemsHelperMethod(arm);
+                  this.getHelmet().setEquipped(true);
+                  System.out.println(name + "is equipped with " + getHelmet().getType());
+                }
+                break;
+              case "chest":
+                if (this.chest == null) {
+                  setChest(arm);
+                  equipItemsHelperMethod(arm);
+                  this.getChest().setEquipped(true);
+                  System.out.println(name + "is equipped with " + getChest().getType());
+                }
+                break;
+              case "hands":
+                if (this.hands == null) {
+                  setHands(arm);
+                  equipItemsHelperMethod(arm);
+                  this.getHands().setEquipped(true);
+                  System.out.println(name + "is equipped with " + getHands().getType());
+                }
+                break;
+              case "legs":
+                if (this.legs == null) {
+                  setLegs(arm);
+                  equipItemsHelperMethod(arm);
+                  this.getLegs().setEquipped(true);
+                  System.out.println(name + "is equipped with " + getLegs().getType());
+                }
+                break;
+              case "boots":
+                if (this.boots == null) {
+                  setBoots(arm);
+                  equipItemsHelperMethod(arm);
+                  this.getBoots().setEquipped(true);
+                  System.out.println(name + "is equipped with " + getBoots().getType());
+                }
+                break;
+              default:
+                System.out.printf("There is no armor with the type of %s%n", arm.getType());
+                break;
+            }
           }
         }
       }
