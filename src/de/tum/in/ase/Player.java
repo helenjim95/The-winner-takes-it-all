@@ -188,7 +188,7 @@ public abstract class Player implements Interactions {
         this.agility +=  item.getAgility();
         this.spirit += item.getSpirit();
       } else if (item.getClass().equals(Armor.class)) {
-        this.setAmountOfArmor(this.getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
+        this.amountOfArmor += ((Armor) item).getAmountOfArmor();
         this.strength += item.getStrength();
         this.intelligence +=  item.getIntelligence();
         this.agility +=  item.getAgility();
