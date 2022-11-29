@@ -222,43 +222,43 @@ public abstract class Player implements Interactions {
           if (arm.getSpecification().equals(this.specification)) {
             switch (arm.getType()) {
               case "helmet":
-                if (this.helmet == null) {
+                if (this.helmet == null || !this.helmet.isEquipped()) {
 //               After equipping, any item player's attributes should be changed accordingly.
-                  setHelmet(arm);
+                  this.helmet = arm;
                   equipItemsHelperMethod(arm);
-                  this.getHelmet().setEquipped(true);
+                  this.helmet.setEquipped(true);
                   System.out.println(name + "is equipped with " + getHelmet().getType());
                 }
                 break;
               case "chest":
-                if (this.chest == null) {
-                  setChest(arm);
+                if (this.chest == null || !this.chest.isEquipped()) {
+                  this.chest = arm;
                   equipItemsHelperMethod(arm);
-                  this.getChest().setEquipped(true);
+                  this.chest.setEquipped(true);
                   System.out.println(name + "is equipped with " + getChest().getType());
                 }
                 break;
               case "hands":
-                if (this.hands == null) {
-                  setHands(arm);
+                if (this.hands == null || !this.hands.isEquipped()) {
+                  this.hands = arm;
                   equipItemsHelperMethod(arm);
-                  this.getHands().setEquipped(true);
+                  this.hands.setEquipped(true);
                   System.out.println(name + "is equipped with " + getHands().getType());
                 }
                 break;
               case "legs":
-                if (this.legs == null) {
-                  setLegs(arm);
+                if (this.legs == null || !this.legs.isEquipped()) {
+                  this.legs = arm;
                   equipItemsHelperMethod(arm);
-                  this.getLegs().setEquipped(true);
+                  this.legs.setEquipped(true);
                   System.out.println(name + "is equipped with " + getLegs().getType());
                 }
                 break;
               case "boots":
-                if (this.boots == null) {
-                  setBoots(arm);
+                if (this.boots == null || !this.boots.isEquipped()) {
+                  this.boots = arm;
                   equipItemsHelperMethod(arm);
-                  this.getBoots().setEquipped(true);
+                  this.boots.setEquipped(true);
                   System.out.println(name + "is equipped with " + getBoots().getType());
                 }
                 break;
@@ -269,10 +269,10 @@ public abstract class Player implements Interactions {
           }
         }
       }
-      if (this.weapon == null || !this.weapon.equipped) {
-        if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
+      if (this.weapon == null || !this.weapon.isEquipped()) {
+        if (this.specification.equals(this.weapon.getSpecification()) && this.weaponType.equals(this.weapon.getType())) {
           equipItemsHelperMethod(weapon);
-          this.getWeapon().setEquipped(true);
+          this.weapon.setEquipped(true);
         }
       }
     }
