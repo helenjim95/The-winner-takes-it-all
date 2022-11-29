@@ -41,6 +41,10 @@ public class Tank extends Player {
       shield.setEquipped(true);
       armor.add(shield);
       setAmountOfArmor(getAmountOfArmor() + shield.getAmountOfArmor());
+      this.strength += shield.getStrength();
+      this.intelligence +=  shield.getIntelligence();
+      this.agility +=  shield.getAgility();
+      this.spirit += shield.getSpirit();
     }
 
     @Override
