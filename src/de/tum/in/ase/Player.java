@@ -32,9 +32,7 @@ public abstract class Player implements Interactions {
       this.level = 1;
       this.armor = armor;
   //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
-        this.weapon = weapon;
-      }
+      this.weapon = weapon;
     }
 
     public String getName() {
@@ -258,7 +256,9 @@ public abstract class Player implements Interactions {
         }
       }
       if (this.weapon == null || !this.weapon.equipped) {
-        equipItemsHelperMethod(weapon);
+        if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
+          equipItemsHelperMethod(weapon);
+        }
       }
     }
 }
