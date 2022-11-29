@@ -19,6 +19,11 @@ public class Mage extends Player {
       this.spirit = 6;
     }
 
+    @Override
+    public int getAmountOfArmor() {
+        return amountOfArmor;
+    }
+
     public void setAbilities(List<Ability> abilities) {
       this.abilities = abilities;
     }
@@ -29,12 +34,12 @@ public class Mage extends Player {
 
     @Override
     public void attack(Player target) {
-      if (weapon == null || !weapon.isEquipped()) {
+      if (this.weapon == null || !this.weapon.isEquipped()) {
         System.out.println("You don't have a weapon to attack!");
       } else {
         double k1 = 0.4;
         double k2 = 0.4;
-        int damage = (int) (strength * k1 + weapon.getDamage() + agility * k2 - target.getAmountOfArmor());
+        int damage = (int) (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
         if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {

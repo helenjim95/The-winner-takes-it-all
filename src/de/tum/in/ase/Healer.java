@@ -17,6 +17,10 @@ public class Healer extends Player {
       this.spirit = 10;
     }
 
+    @Override
+    public int getAmountOfArmor() {
+      return amountOfArmor;
+    }
     public List<Ability> getAbilities() {
       return abilities;
     }

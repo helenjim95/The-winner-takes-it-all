@@ -186,14 +186,14 @@ public abstract class Player implements Interactions {
 
 //        System.out.println(item.getClass() == Weapon.class);
 
-        setWeapon((Weapon) item);
+        this.setWeapon((Weapon) item);
 
 //        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
       } else if (item.getClass() == Armor.class) {
 //        System.out.println(item.getClass() == Armor.class);
 
 //        System.out.println("old amount of armor: " + getAmountOfArmor());
-        setAmountOfArmor(getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
+        this.setAmountOfArmor(this.getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
 
 //        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
 //        System.out.println("new amount of armor: " + getAmountOfArmor());
