@@ -16,10 +16,6 @@ public class Warrior extends Player {
     this.spirit = 2;
   }
 
-  public int getAmountOfArmor() {
-    return amountOfArmor;
-  }
-
   public List<Ability> getAbilities() {
     return abilities;
   }

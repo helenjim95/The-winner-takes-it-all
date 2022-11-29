@@ -19,9 +19,6 @@ public class Mage extends Player {
       this.spirit = 6;
     }
 
-    public int getAmountOfArmor() {
-      return amountOfArmor;
-    }
     public void setAbilities(List<Ability> abilities) {
       this.abilities = abilities;
     }
