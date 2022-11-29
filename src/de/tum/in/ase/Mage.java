@@ -24,6 +24,11 @@ public class Mage extends Player {
         return amountOfArmor;
     }
 
+    @Override
+    public void setAmountOfArmor(int amountOfArmor) {
+        this.amountOfArmor = amountOfArmor;
+    }
+
     public void setAbilities(List<Ability> abilities) {
       this.abilities = abilities;
     }

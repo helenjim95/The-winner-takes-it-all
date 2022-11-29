@@ -21,6 +21,12 @@ public class Healer extends Player {
     public int getAmountOfArmor() {
       return amountOfArmor;
     }
+
+    @Override
+    public void setAmountOfArmor(int amountOfArmor) {
+    this.amountOfArmor = amountOfArmor;
+  }
+
     public List<Ability> getAbilities() {
       return abilities;
     }

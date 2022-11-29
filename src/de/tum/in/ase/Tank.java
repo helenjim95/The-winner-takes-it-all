@@ -24,6 +24,11 @@ public class Tank extends Player {
         return amountOfArmor;
     }
 
+    @Override
+    public void setAmountOfArmor(int amountOfArmor) {
+        this.amountOfArmor = amountOfArmor;
+    }
+
     public List<Ability> getAbilities() {
       return abilities;
     }
