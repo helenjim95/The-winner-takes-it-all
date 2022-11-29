@@ -66,11 +66,14 @@ public class Tank extends Player {
         System.out.printf("%s has no skills to use!%n", this.name);
         } else {
             int randomIndex = (int) (Math.random() * length);
-            int armorIncrease = this.abilities.get(randomIndex).getArmor();
-            this.setAmountOfArmor(this.getAmountOfArmor() + armorIncrease);
+            Ability ability = abilities.get(randomIndex);
+            if (ability.getSpecification().equals(this.specification)) {
+                int armorIncrease = ability.getArmor();
+                this.setAmountOfArmor(this.getAmountOfArmor() + armorIncrease);
 //      force his target to attack him
-            System.out.println("Hey you! I am here, attack me!");
-            target.attack(this);
+                System.out.println("Hey you! I am here, attack me!");
+                target.attack(this);
+            }
         }
     }
 }

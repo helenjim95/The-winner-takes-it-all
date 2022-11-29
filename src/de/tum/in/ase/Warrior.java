@@ -52,12 +52,15 @@ public class Warrior extends Player {
       System.out.printf("%s has no skills to use!%n", this.name);
     } else {
       int randomIndex = (int) (Math.random() * length);
+      Ability ability = abilities.get(randomIndex);
+      if (ability.getSpecification().equals(this.specification)) {
 //      use abilities to damage targets
-      int damage = this.strength * 2 + this.abilities.get(randomIndex).getDamage() - target.getAmountOfArmor();
-      if (damage <= 0) {
-        System.out.printf("Target %s didn't receive any damage!%n", target.getName());
-      } else {
-        target.setHealth(target.getHealth() - damage);
+        int damage = this.strength * 2 + ability.getDamage() - target.getAmountOfArmor();
+        if (damage <= 0) {
+          System.out.printf("Target %s didn't receive any damage!%n", target.getName());
+        } else {
+          target.setHealth(target.getHealth() - damage);
+        }
       }
     }
   }
