@@ -202,7 +202,6 @@ public abstract class Player implements Interactions {
         return health == 0;
       }
 
-//      TODO: debug this method!!
   //  Done: The equipItems method uses the available weapon and armor list.
   //   Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
   //   and for each type, only the first item should be equipped.
@@ -216,7 +215,7 @@ public abstract class Player implements Interactions {
           Armor arm = armor.get(i);
           if (arm.getSpecification().equals(this.specification)) {
             switch (arm.getType()) {
-              case "helmet":
+              case "Helmet":
                 if (this.helmet == null || !this.helmet.isEquipped()) {
 //               After equipping, any item player's attributes should be changed accordingly.
                   this.helmet = arm;
@@ -225,7 +224,7 @@ public abstract class Player implements Interactions {
                   System.out.println(name + "is equipped with " + getHelmet().getType());
                 }
                 break;
-              case "chest":
+              case "Chest":
                 if (this.chest == null || !this.chest.isEquipped()) {
                   this.chest = arm;
                   equipItemsHelperMethod(arm);
@@ -233,7 +232,7 @@ public abstract class Player implements Interactions {
                   System.out.println(name + "is equipped with " + getChest().getType());
                 }
                 break;
-              case "hands":
+              case "Hands":
                 if (this.hands == null || !this.hands.isEquipped()) {
                   this.hands = arm;
                   equipItemsHelperMethod(arm);
@@ -241,7 +240,7 @@ public abstract class Player implements Interactions {
                   System.out.println(name + "is equipped with " + getHands().getType());
                 }
                 break;
-              case "legs":
+              case "Legs":
                 if (this.legs == null || !this.legs.isEquipped()) {
                   this.legs = arm;
                   equipItemsHelperMethod(arm);
@@ -249,7 +248,7 @@ public abstract class Player implements Interactions {
                   System.out.println(name + "is equipped with " + getLegs().getType());
                 }
                 break;
-              case "boots":
+              case "Boots":
                 if (this.boots == null || !this.boots.isEquipped()) {
                   this.boots = arm;
                   equipItemsHelperMethod(arm);
