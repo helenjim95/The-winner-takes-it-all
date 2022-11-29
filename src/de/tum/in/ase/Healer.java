@@ -36,7 +36,12 @@ public class Healer extends Player {
         if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
-          target.setHealth(target.getHealth() - damage);
+          double newHealth = target.getHealth() - damage;
+          if (newHealth < 0) {
+            target.setHealth(0);
+          } else {
+            target.setHealth(target.getHealth() - damage);
+          }
           if (target.isDead()) {
             System.out.printf("%s killed %s%n", this.getName(), target.getName());
           }
