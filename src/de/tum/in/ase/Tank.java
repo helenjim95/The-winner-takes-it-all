@@ -55,7 +55,7 @@ public class Tank extends Player {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
             double newHealth = target.getHealth() - damage;
-            if (newHealth < 0) {
+            if (newHealth <= 0) {
                 target.setHealth(0);
             } else {
                 target.setHealth(target.getHealth() - damage);
