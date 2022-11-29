@@ -210,7 +210,7 @@ public abstract class Player implements Interactions {
     protected void equipItems() {
       //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
 //      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
-      if (!armor.isEmpty()) {
+      if (armor != null && !armor.isEmpty()) {
         for (int i = 0; i < armor.size(); i++) {
           Armor arm = armor.get(i);
           if (arm.getSpecification().equals(this.specification)) {
@@ -263,7 +263,7 @@ public abstract class Player implements Interactions {
           }
         }
       }
-      if (this.weapon == null || !this.weapon.isEquipped()) {
+      if (this.weapon != null && !this.weapon.isEquipped()) {
         if (this.specification.equals(this.weapon.getSpecification()) && this.weaponType.equals(this.weapon.getType())) {
           equipItemsHelperMethod(weapon);
           this.weapon.setEquipped(true);
