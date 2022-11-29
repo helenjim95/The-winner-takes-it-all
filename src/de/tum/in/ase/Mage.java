@@ -70,4 +70,90 @@ public class Mage extends Player {
       }
     }
 
+    public void equipItemsHelperMethod(Item item) {
+
+        if (item.getClass() == Weapon.class) {
+
+            System.out.println(item.getClass() == Weapon.class);
+
+            setWeapon(weapon);
+            item.equipped = true;
+
+            System.out.println(item.getType() + "is equipped: " + item.isEquipped());
+        } else if (item.getClass() == Armor.class) {
+            System.out.println(item.getClass() == Armor.class);
+
+            System.out.println("old amount of armor: " + getAmountOfArmor());
+
+            setAmountOfArmor(getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
+            item.equipped = true;
+
+            System.out.println(item.getType() + "is equipped: " + item.isEquipped());
+            System.out.println("new amount of armor: " + getAmountOfArmor());
+
+        } else {
+            System.out.println("This item is neither weapon or armor");
+        }
+    }
+
+
+    //  Done: The equipItems method uses the available weapon and armor list.
+    //   Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
+    //   and for each type, only the first item should be equipped.
+    //   After equipping, any item player's attributes should be changed accordingly.
+    //   Same applies to equipping the weapon.
+    protected void equipItems() {
+        //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
+//      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
+        if (!armor.isEmpty()) {
+            for (int i = 0; i < armor.size(); i++) {
+                Armor arm = armor.get(i);
+                switch (arm.getType()) {
+                    case "Helmet":
+                        if (this.helmet == null) {
+//               After equipping, any item player's attributes should be changed accordingly.
+                            setHelmet(arm);
+                            equipItemsHelperMethod(arm);
+                            System.out.println(name + "is equipped with " + getHelmet().getType());
+                        }
+                        break;
+                    case "Chest":
+                        if (this.chest == null) {
+                            setChest(arm);
+                            equipItemsHelperMethod(arm);
+                            System.out.println(name + "is equipped with " + getChest().getType());
+                        }
+                        break;
+                    case "Hands":
+                        if (this.hands == null) {
+                            setHands(arm);
+                            equipItemsHelperMethod(arm);
+                            System.out.println(name + "is equipped with " + getHands().getType());
+                        }
+                        break;
+                    case "Legs":
+                        if (this.legs == null) {
+                            setLegs(arm);
+                            equipItemsHelperMethod(arm);
+                            System.out.println(name + "is equipped with " + getLegs().getType());
+                        }
+                        break;
+                    case "Boots":
+                        if (this.boots == null) {
+                            setBoots(arm);
+                            equipItemsHelperMethod(arm);
+                            System.out.println(name + "is equipped with " + getBoots().getType());
+                        }
+                        break;
+                    default:
+                        System.out.printf("There is no armor with the type of %s%n", arm.getType());
+                        break;
+                }
+            }
+        }
+        if (this.weapon == null || !this.weapon.equipped) {
+            equipItemsHelperMethod(weapon);
+        }
+    }
+
 }

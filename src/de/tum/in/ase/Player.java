@@ -169,7 +169,7 @@ public abstract class Player implements Interactions {
       return weapon;
     }
 
-  public void setWeapon(Weapon weapon) {
+    public void setWeapon(Weapon weapon) {
     this.weapon = weapon;
   }
 
