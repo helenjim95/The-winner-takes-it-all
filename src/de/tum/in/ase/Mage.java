@@ -8,7 +8,7 @@ public class Mage extends Player {
     private List<Ability> abilities;
 
     public Mage(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {
-      super(name, "Mage", armor.size(), armor, weapon, weaponType);
+      super(name, "Mage", 5, armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
 //      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
@@ -17,7 +17,6 @@ public class Mage extends Player {
       this.intelligence = 10;
       this.agility = 4;
       this.spirit = 6;
-      this.amountOfArmor = 5;
     }
 
     public int getAmountOfArmor() {
