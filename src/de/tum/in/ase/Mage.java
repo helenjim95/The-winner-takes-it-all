@@ -21,11 +21,18 @@ public class Mage extends Player {
       this.amountOfArmor = 5;
     }
 
-  public List<Ability> getAbilities() {
-    return abilities;
-  }
+    public int getAmountOfArmor() {
+      return amountOfArmor;
+    }
+    public void setAbilities(List<Ability> abilities) {
+      this.abilities = abilities;
+    }
 
-  @Override
+    public List<Ability> getAbilities() {
+      return abilities;
+    }
+
+    @Override
     public void attack(Player target) {
       if (weapon == null || !weapon.isEquipped()) {
         System.out.println("You don't have a weapon to attack!");

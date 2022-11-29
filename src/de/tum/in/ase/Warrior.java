@@ -1,7 +1,6 @@
 package de.tum.in.ase;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Warrior extends Player {
   private List<Ability> abilities;
@@ -18,6 +17,10 @@ public class Warrior extends Player {
     this.agility = 8;
     this.spirit = 2;
     this.amountOfArmor = 15;
+  }
+
+  public int getAmountOfArmor() {
+    return amountOfArmor;
   }
 
   public List<Ability> getAbilities() {

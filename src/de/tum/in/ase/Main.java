@@ -9,10 +9,12 @@ public class Main {
         Player healer = generatePlayer("Healer");
         Player tank = generatePlayer("Tank");
         Player warrior = generatePlayer("Warrior");
+        System.out.println(mage.getAmountOfArmor());
         mage.equipItems();
+        System.out.println(mage.getAmountOfArmor());
 //        tank.useAbility(mage);
-        healer.equipItems();
-        healer.attack(mage);
+//        healer.equipItems();
+//        healer.attack(mage);
 //        mage.useAbility(healer);
     }
 

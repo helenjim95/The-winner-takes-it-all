@@ -20,6 +20,9 @@ public class Healer extends Player {
       this.amountOfArmor = 9;
     }
 
+    public int getAmountOfArmor() {
+      return amountOfArmor;
+    }
     public List<Ability> getAbilities() {
       return abilities;
     }

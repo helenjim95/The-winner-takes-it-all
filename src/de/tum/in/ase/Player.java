@@ -174,12 +174,26 @@ public abstract class Player implements Interactions {
   }
 
     public void equipItemsHelperMethod(Item item) {
+
       if (item.getClass() == Weapon.class) {
+
+        System.out.println(item.getClass() == Weapon.class);
+
         setWeapon(weapon);
         item.equipped = true;
+
+        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
       } else if (item.getClass() == Armor.class) {
+        System.out.println(item.getClass() == Armor.class);
+
+        System.out.println("old amount of armor: " + getAmountOfArmor());
+
         setAmountOfArmor(getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
         item.equipped = true;
+
+        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
+        System.out.println("new amount of armor: " + getAmountOfArmor());
+
       } else {
         System.out.println("This item is neither weapon or armor");
       }
@@ -206,30 +220,35 @@ public abstract class Player implements Interactions {
 //               After equipping, any item player's attributes should be changed accordingly.
                 setHelmet(arm);
                 equipItemsHelperMethod(arm);
+                System.out.println(name + "is equipped with " + getHelmet().getType());
               }
               break;
             case "Chest":
               if (this.chest == null) {
                 setChest(arm);
                 equipItemsHelperMethod(arm);
+                System.out.println(name + "is equipped with " + getChest().getType());
               }
               break;
             case "Hands":
               if (this.hands == null) {
                 setHands(arm);
                 equipItemsHelperMethod(arm);
+                System.out.println(name + "is equipped with " + getHands().getType());
               }
               break;
             case "Legs":
               if (this.legs == null) {
                 setLegs(arm);
                 equipItemsHelperMethod(arm);
+                System.out.println(name + "is equipped with " + getLegs().getType());
               }
               break;
             case "Boots":
               if (this.boots == null) {
                 setBoots(arm);
                 equipItemsHelperMethod(arm);
+                System.out.println(name + "is equipped with " + getBoots().getType());
               }
               break;
             default:

@@ -20,6 +20,10 @@ public class Tank extends Player {
       this.spirit = 2;
       this.amountOfArmor = 30;
     }
+
+    public int getAmountOfArmor() {
+        return amountOfArmor;
+    }
     public List<Ability> getAbilities() {
       return abilities;
     }
