@@ -183,8 +183,16 @@ public abstract class Player implements Interactions {
     public void equipItemsHelperMethod(Item item) {
       if (item.getClass().equals(Weapon.class)) {
         this.weapon = (Weapon) item;
+        this.strength += item.getStrength();
+        this.intelligence +=  item.getIntelligence();
+        this.agility +=  item.getAgility();
+        this.spirit += item.getSpirit();
       } else if (item.getClass().equals(Armor.class)) {
         setAmountOfArmor(getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
+        this.strength += item.getStrength();
+        this.intelligence +=  item.getIntelligence();
+        this.agility +=  item.getAgility();
+        this.spirit += item.getSpirit();
       } else {
         System.out.println("This item is neither weapon or armor");
       }
