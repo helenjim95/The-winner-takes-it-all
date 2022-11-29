@@ -44,7 +44,7 @@ public class Mage extends Player {
       } else {
         double k1 = 0.4;
         double k2 = 0.4;
-        int damage = (int) (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
+        int damage = (int) ((this.strength + this.weapon.getStrength()) * k1 + this.weapon.getDamage() + (this.agility + weapon.getAgility()) * k2 - target.getAmountOfArmor());
         if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
