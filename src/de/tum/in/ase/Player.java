@@ -171,26 +171,32 @@ public abstract class Player implements Interactions {
     this.weapon = weapon;
   }
 
+//  TODO: associate this armor to this player and check if equipped
+    protected int calculateAmountOfArmor() {
+      int totalAmountOfArmor = 0;
+      for (Armor arm : armor) {
+        totalAmountOfArmor += arm.getAmountOfArmor();
+      }
+      return totalAmountOfArmor;
+    }
+
     public void equipItemsHelperMethod(Item item) {
 
       if (item.getClass() == Weapon.class) {
 
-        System.out.println(item.getClass() == Weapon.class);
+//        System.out.println(item.getClass() == Weapon.class);
 
-        setWeapon(weapon);
-        item.equipped = true;
+        setWeapon((Weapon) item);
 
-        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
+//        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
       } else if (item.getClass() == Armor.class) {
-        System.out.println(item.getClass() == Armor.class);
+//        System.out.println(item.getClass() == Armor.class);
 
-        System.out.println("old amount of armor: " + getAmountOfArmor());
-
+//        System.out.println("old amount of armor: " + getAmountOfArmor());
         setAmountOfArmor(getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
-        item.equipped = true;
 
-        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
-        System.out.println("new amount of armor: " + getAmountOfArmor());
+//        System.out.println(item.getType() + "is equipped: " + item.isEquipped());
+//        System.out.println("new amount of armor: " + getAmountOfArmor());
 
       } else {
         System.out.println("This item is neither weapon or armor");
@@ -218,6 +224,7 @@ public abstract class Player implements Interactions {
 //               After equipping, any item player's attributes should be changed accordingly.
                 setHelmet(arm);
                 equipItemsHelperMethod(arm);
+                this.getHelmet().setEquipped(true);
                 System.out.println(name + "is equipped with " + getHelmet().getType());
               }
               break;
@@ -225,6 +232,7 @@ public abstract class Player implements Interactions {
               if (this.chest == null) {
                 setChest(arm);
                 equipItemsHelperMethod(arm);
+                this.getChest().setEquipped(true);
                 System.out.println(name + "is equipped with " + getChest().getType());
               }
               break;
@@ -232,6 +240,7 @@ public abstract class Player implements Interactions {
               if (this.hands == null) {
                 setHands(arm);
                 equipItemsHelperMethod(arm);
+                this.getHands().setEquipped(true);
                 System.out.println(name + "is equipped with " + getHands().getType());
               }
               break;
@@ -239,6 +248,7 @@ public abstract class Player implements Interactions {
               if (this.legs == null) {
                 setLegs(arm);
                 equipItemsHelperMethod(arm);
+                this.getLegs().setEquipped(true);
                 System.out.println(name + "is equipped with " + getLegs().getType());
               }
               break;
@@ -246,6 +256,7 @@ public abstract class Player implements Interactions {
               if (this.boots == null) {
                 setBoots(arm);
                 equipItemsHelperMethod(arm);
+                this.getBoots().setEquipped(true);
                 System.out.println(name + "is equipped with " + getBoots().getType());
               }
               break;
@@ -258,6 +269,7 @@ public abstract class Player implements Interactions {
       if (this.weapon == null || !this.weapon.equipped) {
         if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
           equipItemsHelperMethod(weapon);
+          this.getWeapon().setEquipped(true);
         }
       }
     }
