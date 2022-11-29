@@ -17,6 +17,7 @@ public class Healer extends Player {
       this.intelligence = 5;
       this.agility = 3;
       this.spirit = 10;
+      this.amountOfArmor = 9;
     }
 
     public List<Ability> getAbilities() {
