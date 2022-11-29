@@ -220,7 +220,7 @@ public abstract class Player implements Interactions {
         for (int i = 0; i < armor.size(); i++) {
           Armor arm = armor.get(i);
           switch (arm.getType()) {
-            case "Helmet":
+            case "helmet":
               if (this.helmet == null) {
 //               After equipping, any item player's attributes should be changed accordingly.
                 setHelmet(arm);
@@ -229,7 +229,7 @@ public abstract class Player implements Interactions {
                 System.out.println(name + "is equipped with " + getHelmet().getType());
               }
               break;
-            case "Chest":
+            case "chest":
               if (this.chest == null) {
                 setChest(arm);
                 equipItemsHelperMethod(arm);
@@ -237,7 +237,7 @@ public abstract class Player implements Interactions {
                 System.out.println(name + "is equipped with " + getChest().getType());
               }
               break;
-            case "Hands":
+            case "hands":
               if (this.hands == null) {
                 setHands(arm);
                 equipItemsHelperMethod(arm);
@@ -245,7 +245,7 @@ public abstract class Player implements Interactions {
                 System.out.println(name + "is equipped with " + getHands().getType());
               }
               break;
-            case "Legs":
+            case "legs":
               if (this.legs == null) {
                 setLegs(arm);
                 equipItemsHelperMethod(arm);
@@ -253,7 +253,7 @@ public abstract class Player implements Interactions {
                 System.out.println(name + "is equipped with " + getLegs().getType());
               }
               break;
-            case "Boots":
+            case "boots":
               if (this.boots == null) {
                 setBoots(arm);
                 equipItemsHelperMethod(arm);
