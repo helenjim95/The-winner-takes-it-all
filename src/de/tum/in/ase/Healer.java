@@ -10,9 +10,7 @@ public class Healer extends Player {
       super(name, "Healer", armor.size(), armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
-        this.weapon = weapon;
-      }
+      this.weapon = weapon;
       this.strength = 3;
       this.intelligence = 5;
       this.agility = 3;
@@ -34,7 +32,7 @@ public class Healer extends Player {
       } else {
         double k1 = 0.2;
         double k2 = 0.1;
-        int damage = (int) (strength * k1 + weapon.getDamage() + agility * k2 - target.getAmountOfArmor());
+        int damage = (int) (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
         if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {

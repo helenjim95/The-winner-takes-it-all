@@ -9,9 +9,7 @@ public class Warrior extends Player {
     super(name, "Warrior", armor.size(), armor, weapon, weaponType);
     this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-    if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
-      this.weapon = weapon;
-    }
+    this.weapon = weapon;
     this.strength = 20;
     this.intelligence = 2;
     this.agility = 8;
@@ -49,13 +47,13 @@ public class Warrior extends Player {
 
   @Override
   public void useAbility(Player target) {
-    int length = abilities.size() - 1;
+    int length = this.abilities.size() - 1;
     if (length == 0) {
       System.out.printf("%s has no skills to use!%n", this.name);
     } else {
       int randomIndex = (int) (Math.random() * length);
 //      use abilities to damage targets
-      int damage = strength * 2 + abilities.get(randomIndex).getDamage() - target.getAmountOfArmor();
+      int damage = this.strength * 2 + this.abilities.get(randomIndex).getDamage() - target.getAmountOfArmor();
       if (damage <= 0) {
         System.out.printf("Target %s didn't receive any damage!%n", target.getName());
       } else {

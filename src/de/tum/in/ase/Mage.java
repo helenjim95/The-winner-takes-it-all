@@ -11,9 +11,8 @@ public class Mage extends Player {
       super(name, "Mage", armor.size(), armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
-        this.weapon = weapon;
-      }
+//      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
+      this.weapon = weapon;
       this.strength = 2;
       this.intelligence = 10;
       this.agility = 4;
@@ -55,13 +54,13 @@ public class Mage extends Player {
 //    TODO: Damage dealt to the enemy target after using an ability is incorrect.
     @Override
     public void useAbility(Player target) {
-      int length = abilities.size() - 1;
+      int length = this.abilities.size() - 1;
       if (length == 0) {
         System.out.printf("%s has no spells to cast!%n", this.name);
       } else {
         int randomIndex = (int) (Math.random() * length);
 //      use abilities to damage targets
-        int damage = (int) (intelligence + abilities.get(randomIndex).getDamage() + spirit * 0.5 - target.getAmountOfArmor());
+        int damage = (int) (this.intelligence + this.abilities.get(randomIndex).getDamage() + this.spirit * 0.5 - target.getAmountOfArmor());
         if (damage <= 0) {
           System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {

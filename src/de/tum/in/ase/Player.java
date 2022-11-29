@@ -207,6 +207,7 @@ public abstract class Player implements Interactions {
         return health == 0;
       }
 
+//      TODO: debug this method!!
   //  Done: The equipItems method uses the available weapon and armor list.
   //   Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
   //   and for each type, only the first item should be equipped.

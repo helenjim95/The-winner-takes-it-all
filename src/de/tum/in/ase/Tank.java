@@ -10,9 +10,8 @@ public class Tank extends Player {
       super(name, "Tank", armor.size(), armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
-        this.weapon = weapon;
-      }
+//      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
+      this.weapon = weapon;
       this.shield = shield;
       this.strength = 14;
       this.intelligence = 4;
@@ -61,13 +60,13 @@ public class Tank extends Player {
     @Override
     public void useAbility(Player target) {
 //      when a tank uses his ability, the armor is increased and afterwards he deals with the enemy attack.
-        int length = abilities.size() - 1;
+        int length = this.abilities.size() - 1;
         if (length == 0) {
         System.out.printf("%s has no skills to use!%n", this.name);
         } else {
             int randomIndex = (int) (Math.random() * length);
-            int armorIncrease = abilities.get(randomIndex).getArmor();
-            setAmountOfArmor(getAmountOfArmor() + armorIncrease);
+            int armorIncrease = this.abilities.get(randomIndex).getArmor();
+            this.setAmountOfArmor(this.getAmountOfArmor() + armorIncrease);
 //      force his target to attack him
             System.out.println("Hey you! I am here, attack me!");
             target.attack(this);
