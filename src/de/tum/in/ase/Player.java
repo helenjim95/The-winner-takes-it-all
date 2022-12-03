@@ -188,7 +188,7 @@ public abstract class Player implements Interactions {
         this.agility +=  item.getAgility();
         this.spirit += item.getSpirit();
       } else if (item.getClass().equals(Armor.class)) {
-        this.amountOfArmor += ((Armor) item).getAmountOfArmor();
+        this.setAmountOfArmor(this.getAmountOfArmor() + ((Armor) item).getAmountOfArmor());
         this.strength += item.getStrength();
         this.intelligence +=  item.getIntelligence();
         this.agility +=  item.getAgility();
@@ -210,50 +210,50 @@ public abstract class Player implements Interactions {
     protected void equipItems() {
       //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
 //      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
-      if (armor != null && !armor.isEmpty()) {
-        for (int i = 0; i < armor.size(); i++) {
-          Armor arm = armor.get(i);
+      if (this.armor != null && !this.armor.isEmpty()) {
+        for (int i = 0; i < this.armor.size(); i++) {
+          Armor arm = this.armor.get(i);
           if (arm.getSpecification().equals(this.specification)) {
             switch (arm.getType()) {
               case "Helmet":
                 if (this.helmet == null || !this.helmet.isEquipped()) {
 //               After equipping, any item player's attributes should be changed accordingly.
                   this.helmet = arm;
-                  equipItemsHelperMethod(arm);
+                  this.equipItemsHelperMethod(arm);
                   this.helmet.setEquipped(true);
-                  System.out.println(name + "is equipped with " + getHelmet().getType());
+                  System.out.println(this.name + "is equipped with " + this.getHelmet().getType());
                 }
                 break;
               case "Chest":
                 if (this.chest == null || !this.chest.isEquipped()) {
                   this.chest = arm;
-                  equipItemsHelperMethod(arm);
+                  this.equipItemsHelperMethod(arm);
                   this.chest.setEquipped(true);
-                  System.out.println(name + "is equipped with " + getChest().getType());
+                  System.out.println(this.name + "is equipped with " + this.getChest().getType());
                 }
                 break;
               case "Hands":
                 if (this.hands == null || !this.hands.isEquipped()) {
                   this.hands = arm;
-                  equipItemsHelperMethod(arm);
+                  this.equipItemsHelperMethod(arm);
                   this.hands.setEquipped(true);
-                  System.out.println(name + "is equipped with " + getHands().getType());
+                  System.out.println(this.name + "is equipped with " + this.getHands().getType());
                 }
                 break;
               case "Legs":
                 if (this.legs == null || !this.legs.isEquipped()) {
                   this.legs = arm;
-                  equipItemsHelperMethod(arm);
+                  this.equipItemsHelperMethod(arm);
                   this.legs.setEquipped(true);
-                  System.out.println(name + "is equipped with " + getLegs().getType());
+                  System.out.println(this.name + "is equipped with " + this.getLegs().getType());
                 }
                 break;
               case "Boots":
                 if (this.boots == null || !this.boots.isEquipped()) {
                   this.boots = arm;
-                  equipItemsHelperMethod(arm);
+                  this.equipItemsHelperMethod(arm);
                   this.boots.setEquipped(true);
-                  System.out.println(name + "is equipped with " + getBoots().getType());
+                  System.out.println(this.name + "is equipped with " + this.getBoots().getType());
                 }
                 break;
               default:
