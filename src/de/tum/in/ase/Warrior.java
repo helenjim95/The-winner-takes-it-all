@@ -63,18 +63,20 @@ public class Warrior extends Player {
     } else {
       int randomIndex = (int) (Math.random() * length);
       Ability ability = abilities.get(randomIndex);
-      if (ability.getSpecification().equals(this.specification)) {
+      while (!ability.getSpecification().equals(this.specification)) {
+        randomIndex = (int) (Math.random() * length);
+        ability = abilities.get(randomIndex);
+      }
 //      use abilities to damage targets
-        int damage = this.strength * 2 + ability.getDamage() - target.getAmountOfArmor();
-        if (damage <= 0) {
-          System.out.printf("Target %s didn't receive any damage!%n", target.getName());
+      int damage = this.strength * 2 + ability.getDamage() - target.getAmountOfArmor();
+      if (damage <= 0) {
+        System.out.printf("Target %s didn't receive any damage!%n", target.getName());
+      } else {
+        double newHealth = target.getHealth() - damage;
+        if (newHealth <= 0) {
+          target.setHealth(0);
         } else {
-          double newHealth = target.getHealth() - damage;
-          if (newHealth <= 0) {
-            target.setHealth(0);
-          } else {
-            target.setHealth(target.getHealth() - damage);
-          }
+          target.setHealth(target.getHealth() - damage);
         }
       }
     }

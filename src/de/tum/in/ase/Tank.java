@@ -81,13 +81,15 @@ public class Tank extends Player {
         } else {
             int randomIndex = (int) (Math.random() * length);
             Ability ability = abilities.get(randomIndex);
-            if (ability.getSpecification().equals(this.specification)) {
-                int armorIncrease = ability.getArmor();
-                this.setAmountOfArmor(this.getAmountOfArmor() + armorIncrease);
-//      force his target to attack him
-                System.out.println("Hey you! I am here, attack me!");
-                target.attack(this);
+            while (!ability.getSpecification().equals(this.specification)) {
+                randomIndex = (int) (Math.random() * length);
+                ability = abilities.get(randomIndex);
             }
+            int armorIncrease = ability.getArmor();
+            this.setAmountOfArmor(this.getAmountOfArmor() + armorIncrease);
+//      force his target to attack him
+            System.out.println("Hey you! I am here, attack me!");
+            target.attack(this);
         }
     }
 }
