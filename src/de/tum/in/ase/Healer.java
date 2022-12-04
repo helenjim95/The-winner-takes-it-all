@@ -34,7 +34,7 @@ public class Healer extends Player {
 
     @Override
     public void attack(Player target) {
-      if (weapon == null || !weapon.isEquipped()) {
+      if (!this.weapon.isEquipped()) {
         System.out.println("You don't have a weapon to attack!");
       } else {
         double k1 = 0.2;
