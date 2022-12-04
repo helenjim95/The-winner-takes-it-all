@@ -33,7 +33,7 @@ public class Warrior extends Player {
 
   @Override
   public void attack(Player target) {
-    if (!this.weapon.isEquipped()) {
+    if (this.weapon == null || !this.weapon.isEquipped()) {
       System.out.println("You don't have a weapon to attack!");
     } else {
       double k1 = 1;
@@ -58,7 +58,7 @@ public class Warrior extends Player {
 
   @Override
   public void useAbility(Player target) {
-    int length = this.abilities.size() - 1;
+    int length = this.abilities.size();
     if (length == 0) {
       System.out.printf("%s has no skills to use!%n", this.name);
     } else {

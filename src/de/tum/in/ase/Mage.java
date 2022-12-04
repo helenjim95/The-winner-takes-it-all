@@ -40,7 +40,7 @@ public class Mage extends Player {
 
     @Override
     public void attack(Player target) {
-      if (!this.weapon.isEquipped()) {
+      if (this.weapon == null || !this.weapon.isEquipped()) {
         System.out.println("You don't have a weapon to attack!");
       } else {
         double k1 = 0.4;
@@ -66,7 +66,7 @@ public class Mage extends Player {
 //    TODO: Damage dealt to the enemy target after using an ability is incorrect.
     @Override
     public void useAbility(Player target) {
-        int length = this.abilities.size() - 1;
+        int length = this.abilities.size();
         if (length == 0) {
             System.out.printf("%s has no spells to cast!%n", this.name);
         } else {
