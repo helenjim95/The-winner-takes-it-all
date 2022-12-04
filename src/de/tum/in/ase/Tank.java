@@ -83,10 +83,10 @@ public class Tank extends Player {
             System.out.printf("%s has no skills to use!%n", this.name);
         } else {
             int randomIndex = (int) (Math.random() * length);
-            Ability ability = abilities.get(randomIndex);
+            Ability ability = this.abilities.get(randomIndex);
             while (!ability.getSpecification().equals(this.specification)) {
                 randomIndex = (int) (Math.random() * length);
-                ability = abilities.get(randomIndex);
+                ability = this.abilities.get(randomIndex);
             }
             int armorIncrease = ability.getArmor();
             this.setStrength(this.getStrength() + armorIncrease);

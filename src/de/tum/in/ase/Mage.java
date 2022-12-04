@@ -71,10 +71,10 @@ public class Mage extends Player {
             System.out.printf("%s has no spells to cast!%n", this.name);
         } else {
             int randomIndex = (int) (Math.random() * length);
-            Ability ability = abilities.get(randomIndex);
+            Ability ability = this.abilities.get(randomIndex);
             while (!ability.getSpecification().equals(this.specification)) {
                 randomIndex = (int) (Math.random() * length);
-                ability = abilities.get(randomIndex);
+                ability = this.abilities.get(randomIndex);
             }
 //      use abilities to damage targets
             int damage = (int) (this.intelligence + ability.getDamage() + this.spirit * 0.5 - target.getAmountOfArmor());

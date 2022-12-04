@@ -59,17 +59,17 @@ public class Healer extends Player {
 
     @Override
     public void useAbility(Player target) {
-      int length = abilities.size() - 1;
+      int length = this.abilities.size() - 1;
       if (length == 0) {
         System.out.printf("%s has no spells to cast!%n", this.name);
       } else {
         int randomIndex = (int) (Math.random() * length);
-        Ability ability = abilities.get(randomIndex);
+        Ability ability = this.abilities.get(randomIndex);
         while (!ability.getSpecification().equals(this.specification)) {
           randomIndex = (int) (Math.random() * length);
-          ability = abilities.get(randomIndex);
+          ability = this.abilities.get(randomIndex);
         }
-        int healthIncrease = (int) (spirit + ability.getHeal() + intelligence * 0.5);
+        int healthIncrease = (int) (this.spirit + ability.getHeal() + this.intelligence * 0.5);
         if (target.isDead()) {
           System.out.printf("Can not heal %s, %s is dead!%n", target.getName(), target.getName());
         } else {
