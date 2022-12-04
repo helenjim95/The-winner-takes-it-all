@@ -7,7 +7,7 @@ public class Tank extends Player {
     private Armor shield;
 
     public Tank(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType, Armor shield) {
-      super(name, "Tank", 30, armor, weapon, weaponType);
+      super(name, "Tank", 31, armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
 //      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
