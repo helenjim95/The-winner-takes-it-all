@@ -46,12 +46,12 @@ public class Warrior extends Player {
         if (newHealth <= 0) {
           target.setHealth(0);
         } else {
-          target.setHealth(target.getHealth() - damage);
+          target.setHealth(newHealth);
         }
         if (target.isDead()) {
           System.out.printf("%s killed %s%n", this.getName(), target.getName());
+          this.setLevel(this.getLevel() + 1);
         }
-        this.setLevel(this.getLevel() + 1);
       }
     }
   }
