@@ -17,6 +17,7 @@ public class Mage extends Player {
       this.intelligence = 10;
       this.agility = 4;
       this.spirit = 6;
+      this.equipItems();
     }
 
     @Override

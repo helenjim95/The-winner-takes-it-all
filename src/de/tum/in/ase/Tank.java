@@ -17,6 +17,7 @@ public class Tank extends Player {
       this.intelligence = 4;
       this.agility = 6;
       this.spirit = 2;
+      this.equipItems();
     }
 
     @Override
