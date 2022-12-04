@@ -211,8 +211,7 @@ public abstract class Player implements Interactions {
       //      Done: set Item.equipped to true if in list / same for weapon (equip only the first item of the same type)
 //      Armor should be equipped according to the type (Helmet, Chest, Hands, Legs, Boots)
       if (this.armor != null && !this.armor.isEmpty()) {
-        for (int i = 0; i < this.armor.size(); i++) {
-          Armor arm = this.armor.get(i);
+        for (Armor arm : this.armor) {
           if (arm.getSpecification().equals(this.specification)) {
             switch (arm.getType()) {
               case "Helmet":
