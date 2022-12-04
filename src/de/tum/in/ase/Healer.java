@@ -7,7 +7,7 @@ public class Healer extends Player {
   private List<Ability> abilities;
 
     public Healer(String name, List<Ability> abilities, List<Armor> armor, Weapon weapon, String weaponType) {
-      super(name, "Healer", 10, armor, weapon, weaponType);
+      super(name, "Healer", 9, armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
       this.weapon = weapon;
