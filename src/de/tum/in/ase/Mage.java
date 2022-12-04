@@ -12,7 +12,7 @@ public class Mage extends Player {
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
 //      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
-      this.weapon = weapon;
+//      this.weapon = weapon;
       this.strength = 2;
       this.intelligence = 10;
       this.agility = 4;

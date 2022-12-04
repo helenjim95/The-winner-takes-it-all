@@ -9,7 +9,7 @@ public class Warrior extends Player {
     super(name, "Warrior", 15, armor, weapon, weaponType);
     this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-    this.weapon = weapon;
+//    this.weapon = weapon;
     this.strength = 20;
     this.intelligence = 2;
     this.agility = 8;

@@ -10,7 +10,7 @@ public class Healer extends Player {
       super(name, "Healer", 9, armor, weapon, weaponType);
       this.abilities = abilities;
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
-      this.weapon = weapon;
+//      this.weapon = weapon;
       this.strength = 3;
       this.intelligence = 5;
       this.agility = 3;
