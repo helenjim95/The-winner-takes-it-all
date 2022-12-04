@@ -16,7 +16,6 @@ public class Tank extends Player {
       this.intelligence = 4;
       this.agility = 6;
       this.spirit = 2;
-      this.shield = shield;
       this.equipShield();
       this.equipItems();
     }
@@ -40,15 +39,14 @@ public class Tank extends Player {
     }
 
     private void equipShield() {
-      shield.setEquipped(true);
-      if (!armor.contains(shield)) {
-          armor.add(shield);
-      }
-      this.amountOfArmor += shield.getAmountOfArmor();
-      this.strength += shield.getStrength();
-      this.intelligence +=  shield.getIntelligence();
-      this.agility +=  shield.getAgility();
-      this.spirit += shield.getSpirit();
+      this.shield = shield;
+      this.shield.setEquipped(true);
+      this.armor.add(this.shield);
+      this.amountOfArmor += this.shield.getAmountOfArmor();
+      this.strength += this.shield.getStrength();
+      this.intelligence +=  this.shield.getIntelligence();
+      this.agility +=  this.shield.getAgility();
+      this.spirit += this.shield.getSpirit();
     }
 
     @Override
