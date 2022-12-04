@@ -12,11 +12,11 @@ public class Tank extends Player {
 //    The player can get the passed weapon only if this weapon is suitable for this player character and the weapon type matches player's weapon type.
 //      if (specification.equals(weapon.getSpecification()) && weaponType.equals(weapon.getType())) {
       this.weapon = weapon;
-      this.shield = shield;
       this.strength = 15;
       this.intelligence = 4;
       this.agility = 6;
       this.spirit = 2;
+      this.shield = shield;
       this.equipShield();
       this.equipItems();
     }
@@ -41,7 +41,9 @@ public class Tank extends Player {
 
     private void equipShield() {
       shield.setEquipped(true);
-      armor.add(shield);
+      if (!armor.contains(shield)) {
+          armor.add(shield);
+      }
       this.amountOfArmor += shield.getAmountOfArmor();
       this.strength += shield.getStrength();
       this.intelligence +=  shield.getIntelligence();
