@@ -11,6 +11,9 @@ public class Main {
         Player tank = generatePlayer("Tank");
         Player warrior = generatePlayer("Warrior");
         System.out.println(tank.getAmountOfArmor());
+        tank.attack(mage);
+        tank.attack(mage);
+        tank.attack(mage);
 //        tank.useAbility(mage);
 //        healer.equipItems();
 //        healer.attack(mage);

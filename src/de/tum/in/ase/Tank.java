@@ -57,16 +57,21 @@ public class Tank extends Player {
       } else {
         double k1 = 0.7;
         double k2 = 0.6;
-        int damage = (int) (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
+        double damage = (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
+        System.out.println("damage:" + damage);
         if (damage <= 0) {
-          System.out.printf("Target %s didn't receive any damage!%n", target.getName());
+//          System.out.printf("Target %s didn't receive any damage!%n", target.getName());
         } else {
+//            System.out.println("target original health: " + target.getHealth());
             double newHealth = target.getHealth() - damage;
+//            System.out.println("target supposed new health: " + newHealth);
             if (newHealth <= 0) {
                 target.setHealth(0);
             } else {
                 target.setHealth(newHealth);
+
             }
+//            System.out.println("target actual new health: " + target.getHealth());
           if (target.isDead()) {
             System.out.printf("%s killed %s%n", this.getName(), target.getName());
               this.setLevel(this.getLevel() + 1);

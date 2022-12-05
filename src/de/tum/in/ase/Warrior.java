@@ -38,7 +38,7 @@ public class Warrior extends Player {
     } else {
       double k1 = 1;
       double k2 = 0.8;
-      int damage = (int) (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
+      double damage = (this.strength * k1 + this.weapon.getDamage() + this.agility * k2 - target.getAmountOfArmor());
       if (damage <= 0) {
         System.out.printf("Target %s didn't receive any damage!%n", target.getName());
       } else {
@@ -69,7 +69,7 @@ public class Warrior extends Player {
         ability = this.abilities.get(randomIndex);
       }
 //      use abilities to damage targets
-      int damage = this.strength * 2 + ability.getDamage() - target.getAmountOfArmor();
+      double damage = (this.strength * 2 + ability.getDamage() - target.getAmountOfArmor());
       if (damage <= 0) {
         System.out.printf("Target %s didn't receive any damage!%n", target.getName());
       } else {
