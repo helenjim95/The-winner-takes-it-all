@@ -29,7 +29,7 @@ public class Main {
         Armor hands2 = new Armor("Hands", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
         Armor legs2 = new Armor("Legs", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
         Armor boots2 = new Armor("Boots", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
-        Armor shield = new Armor("Shield", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
+//        Armor shield = new Armor("Shield", specification, (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10),(int) (Math.random() * 10));
         armorList.add(helmet1);
         armorList.add(chest1);
         armorList.add(hands1);
@@ -40,9 +40,9 @@ public class Main {
         armorList.add(hands2);
         armorList.add(legs2);
         armorList.add(boots2);
-        if(Objects.equals(specification, "Tank")) {
-            armorList.add(shield);
-        }
+//        if(Objects.equals(specification, "Tank")) {
+//            armorList.add(shield);
+//        }
         return armorList;
     }
 
