@@ -73,7 +73,7 @@ public class Tank extends Player {
 //            System.out.println("target actual new health: " + target.getHealth());
           if (target.isDead()) {
             System.out.printf("%s killed %s%n", this.getName(), target.getName());
-              this.setLevel(this.getLevel() + 1);
+            this.setLevel(this.getLevel() + 1);
           }
         }
       }
