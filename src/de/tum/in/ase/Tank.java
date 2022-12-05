@@ -94,7 +94,7 @@ public class Tank extends Player {
                 ability = this.abilities.get(randomIndex);
             }
             int armorIncrease = ability.getArmor();
-            this.setStrength(this.getStrength() + armorIncrease);
+//            this.setStrength(this.getStrength() + armorIncrease);
             this.setAmountOfArmor(this.getAmountOfArmor() + armorIncrease);
 //      force his target to attack him
             System.out.println("Hey you! I am here, attack me!");
