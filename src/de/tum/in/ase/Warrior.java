@@ -14,7 +14,7 @@ public class Warrior extends Player {
     this.intelligence = 2;
     this.agility = 8;
     this.spirit = 2;
-    this.equipItems();
+    equipItems();
   }
 
   @Override
