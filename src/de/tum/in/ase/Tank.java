@@ -16,6 +16,7 @@ public class Tank extends Player {
       this.intelligence = 4;
       this.agility = 6;
       this.spirit = 2;
+      this.shield = shield;
       equipShield();
       equipItems();
     }
@@ -39,7 +40,6 @@ public class Tank extends Player {
     }
 
     private void equipShield() {
-      this.shield = shield;
       this.shield.setEquipped(true);
       this.armor.add(this.shield);
       this.amountOfArmor += this.shield.getAmountOfArmor();
